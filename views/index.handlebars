@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="container lhs">
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-danger">
+                    <div class="panel-heading text-center">
+                        <p> <strong>Delicious Burgers</strong></p>
+                    </div>
+                    <div class="panel-body">
+
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <div class="well well-lg">
+                                    <form class="form-inline" action="/{{this.id}}?_method=PUT" method="POST">
+                                        <div class="form-group">
+                                            <label class="text" for="burger">{{burger_name}}</label>
+                                            <button type="submit" class="btn btn-danger form-control">Devour it!!</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            {{/unless}}
+
+                        {{/each}}
+
+
+                    </div>
+                    <div class="panel-footer">
+                        <form class="form-inline" action="/" method="POST">
+                            <div class="form-group">
+                                <input type="text" id="burgerName" name="burger" class="form-control" placeholder="So what do you want today?">
+                                <button type="submit" class="btn btn-danger">Add</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="panel panel-info">
+                    <div class="panel-heading text-center">
+                        <p> <strong>Checkout</strong></p>
+                    </div>
+                    <div class="panel-body">
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                <p class="text-justify"> {{id}}. {{burger_name}}</p>
+
+                                <hr>
+                            {{/if}}
+
+                        {{/each}}
+
+                    </div>
+                    <div class="panel-footer bg-danger">
+                        <h6 class="text-center text-danger"> <strong> Burger Queen: Enjoy your burger !!  </strong></h6>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,24 @@
+body {
+    background: url("../img/background.jpeg") no-repeat center center fixed;
+}
+
+.heading {
+    font-size: 50px;
+    font-family: fantasy;
+    color: #F7921C;
+}
+
+.queen {
+    height: 60px;
+}
+
+.top {
+    padding-top: 20px;
+padding-bottom: 30px;
+
+}
+
+.main {
+    background-color: rgba(247, 146, 28, 0.6);
+    border: none;
+}
